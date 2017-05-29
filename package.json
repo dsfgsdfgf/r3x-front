@@ -1,0 +1,9 @@
+{
+  "name": "r3x",
+  "version": "0.0.1",
+  "dependencies": {
+    "hget": "^3.1.0",
+    "marked": "latest",
+    "request": "^2.81.0"
+  }
+}

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>< - - - - - - - Bitcoin Exchange - R3X - - - - - ></title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- The LoaD BLoCK -->
+    <!-- -------------- -->
+    <!-- -------------- -->
+    <!-- -------------- -->
+
+    <!-- Todo: Move JS at end, async + loadtime-then-get-async -->
+    <!-- CSS -->
+    <link href='https://fonts.googleapis.com/css?family=Gilda+Display' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="0.css">
+
+    <!-- JS -->
+    <script type='text/javascript' src='js/kaan.js'></script>
+
+
+    <!--<link rel="stylesheet" type="text/css" href="css/normalize.css" />-->
+    <!--<link rel="stylesheet" type="text/css" href="css/demo.css" />-->
+    <!--<link rel="stylesheet" type="text/css" href="css/component.css" />-->
+    <!-- -------------- -->
+    <!-- -------------- -->
+    <!-- -------------- -->
+    <!-- -------------- -->
+    <!-- -------------- -->
+
+
+
+</head>
+
+
+<body>
+
+<div id="_bg"></div>
+<div id="_0">            <!-- _0 : Container -->
+
+    <div id="_1"></div>  <!-- _1 : Top Bar   -->
+
+    <h1 id="titler3x"> R3X - 234561663   $2653.09</h1>
+    <h2> The Bitcoin Exchange </h2>
+    <h3> 313567891023456 - Testing... #$%^!@#$^&*()_</h3>
+    <button id="b0" onclick="loadDoc()"> What ?</button>
+
+
+    <!-- TheForm -->
+    <div id="_2">
+        <!-- BTC price ticker -->
+        <h1 id="_10"> BTC: $ AUD</h1>
+
+        <script>
+            $(document).ready(function () {
+                var headerval = $("#_10").text();
+            })
+        </script>
+
+
+
+        <img id="_3" src="img/seperator2.png"/> <!-- Todo: line - btc img - line + loading animation -->
+
+        <form id="f0" name="f0">
+            <input class="f" id="_50" type="text" name="inputbtc" placeholder="0.0000 BTC"/>
+            <input class="f" id="_51" type="text" name="inputbtc" placeholder="0.0000 BTC"/>
+            <input class="f" id="_52" type="text" name="inputbtc" placeholder="0.0000 BTC"/>
+            <input class="f" id="_53" type="text" name="inputbtc" placeholder="0.0000 BTC"/>
+            <input class="f" id="_54" type="text" name="inputbtc" placeholder="0.0000 BTC"/>
+
+            <script>
+                $("#f0").ajax({
+                    success: function (result) {
+                        $('')
+                    }
+                })
+                $("#f0").fadeOut();
+                $("#b0").click(function () {
+                    $("#b0").fadeIn();
+                }) </script>
+            <br>
+            <select class="f" id="select0" onchange="this.className=this.options[this.selectedIndex].className" class="gray"
+                    id="selectPayment">
+                <optgroup class="bab-font">
+                    <option class="grey" value="">CASH Deposit Payment To</option>
+                    <option class="white" value="ANZ">ANZ Bank</option>
+                    <option class="white" value="CBA">Commonwealth Bank Australia</option>
+                </optgroup>
+            </select>
+
+        </form>
+
+        <br>
+        <h1> Good job, son. </h1>
+        <h3> < - ( God - ca. 1367B.C ) - ></h3>
+    </div>
+
+</div>
+
+<!-- Study stuff... -->
+<!--<script>-->
+<!--function loadDoc() {-->
+<!--var xhttp = new XMLHttpRequest();-->
+<!--xhttp.open("GET", "0.css")-->
+<!--}-->
+<!--</script>-->
+
+
+</body>
+</html>
