@@ -13,11 +13,13 @@
 
     <!-- Todo: Move JS at end, async + loadtime-then-get-async -->
     <!-- CSS -->
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
     <link href='https://fonts.googleapis.com/css?family=Gilda+Display' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="0.css">
 
     <!-- JS -->
-    <script type='text/javascript' src='js/kaan.js'></script>
+    <!--<script type='text/javascript' src='js/kaan.js'></script>-->
+
 
 
     <!--<link rel="stylesheet" type="text/css" href="css/normalize.css" />-->
@@ -28,13 +30,24 @@
     <!-- -------------- -->
     <!-- -------------- -->
     <!-- -------------- -->
-
-
+    <script type="text/javascript">
+        $(function() {
+            var bgimage = new Image();
+            bgimage.url="img/bg2.jpg";
+            $("#_bg").hide();
+            $(bgimage).load(function() {
+                $("#_bg").css("background", "url(img/bg2.jpg) center;").fadeIn(9000);
+            });
+        });
+    </script>
 
 </head>
 
 
 <body>
+
+
+
 
 <div id="_bg"></div>
 <div id="_0">            <!-- _0 : Container -->
@@ -52,15 +65,20 @@
         <!-- BTC price ticker -->
         <h1 id="_10"> BTC: $ AUD</h1>
 
-        <script>
+        <script type="javascript">
             $(document).ready(function () {
                 var headerval = $("#_10").text();
             })
+
+            alert("nnbr LANNN");
         </script>
 
 
 
-        <img id="_3" src="img/seperator2.png"/> <!-- Todo: line - btc img - line + loading animation -->
+        <!--<img id="_3" src="img/seperator2.png"/> &lt;!&ndash; Todo: line - btc img - line + loading animation &ndash;&gt;-->
+        <div id="_3">
+            <span class="sexy_line"></span>
+        </div>
 
         <form id="f0" name="f0">
             <input class="f" id="_50" type="text" name="inputbtc" placeholder="0.0000 BTC"/>
@@ -69,7 +87,7 @@
             <input class="f" id="_53" type="text" name="inputbtc" placeholder="0.0000 BTC"/>
             <input class="f" id="_54" type="text" name="inputbtc" placeholder="0.0000 BTC"/>
 
-            <script>
+            <script type="javascript">
                 $("#f0").ajax({
                     success: function (result) {
                         $('')
