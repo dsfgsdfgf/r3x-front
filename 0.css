@@ -3,10 +3,11 @@
 }
 
 html {
+    background: black;
     /*font-family: sans-serif; !* 1 *!*/
 
     font-family: Gilda Display;
-    /*font-family: 'proxima-nova';*/    /* Todo: Coinbase quest */ 
+    /*font-family: 'proxima-nova';*/    /* Todo: Coinbase quest */   /* Todo: urbantribE R3X & make logo widit */
 
 
     -webkit-font-smoothing: antialiased;
@@ -19,6 +20,9 @@ html {
     color: #AAA;
     font-size: 1em;
     line-height: 1.4;
+    overflow: hidden;
+    height: 100%;
+    opacity: 1.0;
 }
 
 @font-face {        /* Todo: FIND THE REAL PROXIMA NOVA   |   "COINBASE.COM/CHARTS"   |       PRICE FONT . */
@@ -50,19 +54,19 @@ h1 {
 
 /* Background image */
 #_bg {
-    position: fixed;
+    position: absolute;
     left: 0px;
     top: 0px;
     bottom: 0px;
     right: 0px;
 
 
-    background: url('img/bg2.jpg') center;
+    background: url('img/bg2.jpg') center black;
     background-size: cover;
 
     /*filter: blur(5px);*/
     /*filter: brightness(15%);*/
-    display: flex;
+    /*display: flex;*/
 }
 
 
@@ -113,7 +117,7 @@ h1 {
     /*-moz-box-shadow: 10px 10px 5px 20px silver;*/
     box-shadow: 3px 2px 13px 0.1px black;
     padding: 1%;
-    animation: glow 1s cubic-bezier(0.42,0,0.58,1) forwards;
+    animation: slideInRight 600ms ease-out forwards;
 }
 
 #select0 {
@@ -128,7 +132,7 @@ h1 {
     float: left;
     width: 260px;
 
-    background-color: rgba(255, 255, 255, 0.04);
+    background-color: rgba(255, 255, 255, 0.02);
     border: none;
     /*position: relative;*/
     margin: 13px auto;
@@ -148,6 +152,9 @@ h1 {
     animation: glow 1s cubic-bezier(0.42,0,0.58,1) forwards;    /* forwards ==> maintain last state
     /*animation-timing-function:  cubic-bezier(.18,.93,.02,.11);*/
 }
+
+
+
 
 /*=========================================================*/
 /*=========================================================*/
@@ -176,16 +183,11 @@ hr.fancy-line:before, hr.fancy-line:after {
 }
 
 hr.fancy-line, hr.fancy-line:before {
-    background: -moz-radial-gradient(center, ellipse cover, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0) 75%);
-    background: -webkit-gradient(radial, center center, 0px, center center, 75%, color-stop(0%,rgba(0,0,0,0.1)), color-stop(75%,rgba(0,0,0,0)));
-    background: -webkit-radial-gradient(center, ellipse cover, rgba(0,0,0,0.1) 0%,rgba(0,0,0,0) 75%);
-    background: -o-radial-gradient(center, ellipse cover, rgba(0,0,0,0.1) 0%,rgba(0,0,0,0) 75%);
-    background: -ms-radial-gradient(center, ellipse cover, rgba(0,0,0,0.1) 0%,rgba(0,0,0,0) 75%);
-    background: radial-gradient(ellipse at center, rgba(0,0,0,0.1) 0%,rgba(0,0,0,0) 75%);
+    background: radial-gradient(ellipse at center, rgba(0,0,0,0.1) 0%,rgba(0,0,0,0.0) 75%);
 }
 
 body, hr.fancy-line:after {
-    background: #f4f4f4;
+    background-color: rgba(11, 11, 11, 0.75);
 }
 /*=========================================================*/
 /* FNCYLINE FNCYLINE FNCYLINE FNCYLINE FNCYLINE FNCYLINE */
@@ -201,119 +203,117 @@ body, hr.fancy-line:after {
     z-index: 1;
     top: 14px;
 }
-@keyframes glow {
 
+@keyframes growIn {
+    10% {
+        transform: scale3d(0, -0.1, 0);
+    }
+    100% {
+        transform: scale3d(1, 1, 1);
+    }
+}
+@keyframes growOut {
+    10% {
+        transform: scale3d(1, 1, 1);
+    }
+    100% {
+        transform: scale3d(0, 0, 0);
+    }
+}
+
+@keyframes glow {
     10% {
         text-shadow:
                 1px  1px 1px #767676,
                 -1px 1px 5px #737272;
         opacity: 0;
-    }
-    20% {
-        text-shadow:
-                2px  2px 2px #767676,
-                -2px 2px 7px #737272;
-    }
-    30% {
-        text-shadow:
-                3px  2px 3px #767676,
-                -3px 2px 8px #737272;
-        opacity: 0.2;
-    }
-    40% {
-        text-shadow:
-                3px  2px 4px #767676,
-                -3px 2px 20px #737272;
-    }
-    50% {
-        text-shadow:
-                3px  2px 5px #767676,
-                -3px 2px 50px #737272;
-    }
-    60% {
-        text-shadow:
-                3px  2px 6px #767676,
-                -3px 2px 45px #737272;
-    }
-    70% {
-        text-shadow:
-                3px  2px 7px #767676,
-                -3px 2px 40px #737272;
-    }
-    80% {
-        text-shadow:
-                3px  2px 8px #767676,
-                -3px 2px 36px #737272;
-    }
-    90% {
-        text-shadow:
-                3px  2px 7px #767676,
-                -3px 2px 34px #737272;
+
     }
     100% {
-        text-shadow:
-                3px  2px 7px #767676,
-                -3px 2px 33px #737272;
+        text-shadow: 3px 2px 7px #767676,
+        -3px 2px 33px #737272;
         transform: translateX(6px);
         opacity: 1;
     }
-
 }
 
-
-
-/*           Bi boka yaramayan aptal alternatif transformation / animation shit           */
-@keyframes tada {
+@keyframes slideInRight {
     from {
-        transform: scale3d(1, 1, 1);
+        transform: translate3d(100%, 0, 0);
+        visibility: visible;
     }
-
-    10%, 20% {
-        transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
-    }
-
-    30%, 50%, 70%, 90% {
-        transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
-    }
-
-    40%, 60%, 80% {
-        transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
-    }
-
     to {
-        transform: scale3d(1, 1, 1);
+        transform: translate3d(0, 0, 0);
     }
 }
 
-.tada {
-    animation-name: tada;
+@keyframes slideOutRight {
+    from {
+        transform: translate3d(0, 0, 0);
+    }
+    to {
+        visibility: hidden;
+        transform: translate3d(100%, 0, 0);
+    }
 }
 
-
-@keyframes jackInTheBox {
+@keyframes flipInY {
     from {
+        transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+        animation-timing-function: ease-in;
         opacity: 0;
-        transform: scale(0.1) rotate(30deg);
-        transform-origin: center bottom;
     }
 
-    50% {
-        transform: rotate(-10deg);
+    40% {
+        transform: perspective(400px) rotate3d(0, 1, 0, -20deg);
+        animation-timing-function: ease-in;
     }
 
-    70% {
-        transform: rotate(3deg);
+    60% {
+        transform: perspective(400px) rotate3d(0, 1, 0, 10deg);
+        opacity: 1;
+    }
+
+    80% {
+        transform: perspective(400px) rotate3d(0, 1, 0, -5deg);
     }
 
     to {
-        opacity: 1;
-        transform: scale(1);
+        transform: perspective(400px);
     }
 }
 
-.jackInTheBox {
-    animation-name: jackInTheBox;
+@keyframes flipOutY {
+    from {
+        transform: perspective(400px);
+    }
+
+    30% {
+        transform: perspective(400px) rotate3d(0, 1, 0, -15deg);
+        opacity: 1;
+    }
+
+    to {
+        transform: perspective(400px) rotate3d(0, 1, 0, 90deg);
+        opacity: 0;
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

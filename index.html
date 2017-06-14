@@ -14,11 +14,13 @@
     <!-- Todo: Move JS at end, async + loadtime-then-get-async -->
     <!-- CSS -->
     <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+
     <link href='https://fonts.googleapis.com/css?family=Gilda+Display' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="0.css">
 
     <!-- JS -->
-    <!--<script type='text/javascript' src='js/kaan.js'></script>-->
+    <script type='text/javascript' src='js/kaan.js'></script>
 
 
 
@@ -33,10 +35,13 @@
     <script type="text/javascript">
         $(function() {
             var bgimage = new Image();
-            bgimage.url="img/bg2.jpg";
+            bgimage.src = "img/bg2.jpg";
             $("#_bg").hide();
+            console.log("Date.now(): \t" );
             $(bgimage).load(function() {
-                $("#_bg").css("background", "url(img/bg2.jpg) center;").fadeIn(9000);
+//                $("#_bg").css({'background': 'url(' + 'img/bg2.jpg' + ') center;'});
+                $('#_bg').blur().fadeIn(313);
+                $('#_0').hide().fadeIn(626);
             });
         });
     </script>
@@ -77,8 +82,9 @@
 
         <!--<img id="_3" src="img/seperator2.png"/> &lt;!&ndash; Todo: line - btc img - line + loading animation &ndash;&gt;-->
         <div id="_3">
-            <span class="sexy_line"></span>
+            <hr class="fancy-line"></hr>
         </div>
+        <hr class="fancy-line"></hr>
 
         <form id="f0" name="f0">
             <input class="f" id="_50" type="text" name="inputbtc" placeholder="0.0000 BTC"/>

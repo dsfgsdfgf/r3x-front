@@ -1,26 +1,40 @@
-//
-// var ticker_btcusd_url = 'https://apiv2.bitcoinaverage.com/indices/global/ticker/BTCUSD';
-//
-//
-//
-// // var request = require('node_modules/request');
-// // var client = new XMLHttpRequest();
-// // let hget = require('node_modules/hget');
-// // let marked = require('node_modules/marked');
-//
-//
-// // console("DUDE SUPPPP");
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+var ticker_btcusd_url = 'https://apiv2.bitcoinaverage.com/indices/global/ticker/BTCUSD';
+
+
+// var request = require('node_modules/request');
+// var client = new XMLHttpRequest();
+// let hget = require('node_modules/hget');
+// let marked = require('node_modules/marked');
+
+
+// <=================================>
+// <=== Create a new WebSocket ======>
+// <=================================>
+
+window.onload = function () {
+    var socket = new WebSocket('ws://localhost:8000/api/ticker');
+
+    socket.onopen = function (event) {
+        console.log("---> Websocket [OPEN]");
+    }
+    socket.onmessage = function (e) {
+        console.log("\n\n---> Websocket Message: \n" + e.data);
+    };
+
+    // Todo: If WS not supported, call .ajax async HTTP GET /api/ticker2  (REST ticker)
+    socket.onerror = function (e) {
+        console.log("\n\n---> Websocket ERROR: " + e.data);
+    };
+    socket.onclose = function () {
+        console.log("---> Websocket [CLOSE]");
+    };
+
+// ====================================== //
+// ====================================== //
+
+}
+
+
 // // On 'ENTER' ,     <     <    <   <  < < ! GO ! > >  >   >    >     >
 // $(document).keypress(function (e) {
 //     if (e.which == 13 || event.keyCode == 13) {
